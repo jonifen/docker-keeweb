@@ -1,9 +1,12 @@
 version: '2'
 services:
-  lifelog-build:
+  keeweb:
     build: .
     image: jonifen/keeweb
     container_name: keeweb
-    restart: always
+    networks:
+      keeweb_net:
+        ipv4_address: 172.23.0.2
     ports:
-     - "9008:80"
+      - '80:80/tcp'
+    restart: unless-stopped

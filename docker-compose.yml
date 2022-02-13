@@ -1,0 +1,9 @@
+version: '2'
+services:
+  lifelog-build:
+    build: .
+    image: jonifen/keeweb
+    container_name: keeweb
+    restart: always
+    ports:
+     - "9008:80"

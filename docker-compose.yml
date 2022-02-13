@@ -1,4 +1,12 @@
-version: '2'
+version: '3.7'
+
+networks:
+  keeweb_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.23.0.0/16
+
 services:
   keeweb:
     build: .
